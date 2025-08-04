@@ -4,22 +4,86 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>认蒸你就熟了的个人网页</title>
+    <style>
+        body {
+            font-family: "Microsoft YaHei", sans-serif;
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f5f5f5;
+            color: #333;
+        }
+        .header {
+            text-align: center;
+            margin-bottom: 30px;
+            padding: 20px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        .links {
+            margin: 30px 0;
+            padding: 20px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        .content {
+            padding: 20px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        a {
+            color: #1a73e8;
+            text-decoration: none;
+            margin: 0 10px;
+            padding: 5px 10px;
+            border-radius: 4px;
+            transition: background-color 0.3s;
+        }
+        a:hover {
+            background-color: #f0f7ff;
+            text-decoration: underline;
+        }
+        marquee {
+            font-size: 22px;
+            color: #e63946;
+            padding: 15px;
+            background-color: #fff1f0;
+            border-radius: 8px;
+            margin: 20px 0;
+        }
+    </style>
 </head>
 <body>
-    <!-- 页面标题 -->
-    <h1>认蒸你就熟了的个人网页</h1>
+    <!-- 标题区域 -->
+    <div class="header">
+        <h1>认蒸你就熟了的个人网页</h1>
+        <p><em>由GitHub托管</em></p>
+    </div>
     
-    <!-- 跑马灯效果（广告位招租） -->
-    <marquee behavior="scroll" direction="left" scrollamount="5" style="font-size: 20px; color: red; margin: 20px 0;">
-        广告位招租 - 欢迎联系合作，价格从优！
+    <!-- 跑马灯广告位 -->
+    <marquee behavior="scroll" direction="left" scrollamount="6">
+        广告位招租 - 黄金位置，性价比高，欢迎各类合作咨询！
     </marquee>
     
+    <!-- 超链接区域 -->
+    <div class="links">
+        <h3>常用链接</h3>
+        <a href="https://www.baidu.com" target="_blank">百度</a>
+        <a href="https://www.bilibili.com" target="_blank">哔哩哔哩</a>
+        <a href="https://www.youtube.com" target="_blank">油管（YouTube）</a>
+        <a href="https://www.minecraft.net" target="_blank">我的世界官网</a>
+        <a href="https://mc.163.com/" target="_blank">我的世界中国版官网</a>
+    </div>
+    
     <!-- 内容区域 -->
-    <div style="margin: 20px; line-height: 1.6;">
+    <div class="content">
         <h2>关于第一次制作</h2>
-        <p>这是我第一次尝试制作HTML网页，虽然过程中遇到了不少小问题，但通过查阅资料和不断尝试，终于完成了这个简单的页面。</p>
-        <p>目前页面包含了标题、跑马灯效果的广告位，以及这段说明文字。未来还会继续学习，添加更多功能和内容，让网页更加丰富完善。</p>
-       
+        <p>这是我第一次尝试制作HTML网页，从空白文档开始，一步步学习标签的使用和样式的调整。虽然过程中磕磕绊绊，比如一开始不知道如何让页面居中，也不清楚怎么让链接更好看，但通过慢慢摸索，终于做出了现在的效果。</p>
+        <p>现在的页面不仅有了基本的文字内容，还添加了跑马灯广告位和常用网站的链接，整体看起来也更整洁了。未来我还想学习更多知识，比如添加图片展示区和留言板功能，让这个网页变得更实用。</p>
+        <p>第一次独立完成网页制作，虽然简单但很有成就感，这也让我对网页开发产生了更浓厚的兴趣，以后会继续努力提升技能！</p>
     </div>
 </body>
 </html>
