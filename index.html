@@ -21,14 +21,8 @@
             border-radius: 8px;
             box-shadow: 0 2px 5px rgba(0,0,0,0.1);
         }
-        .links {
+        .links, .content, .message-board {
             margin: 30px 0;
-            padding: 20px;
-            background-color: white;
-            border-radius: 8px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-        }
-        .content {
             padding: 20px;
             background-color: white;
             border-radius: 8px;
@@ -53,6 +47,58 @@
             background-color: #fff1f0;
             border-radius: 8px;
             margin: 20px 0;
+        }
+        /* 留言板样式 */
+        .message-input {
+            margin-bottom: 30px;
+            padding: 20px;
+            border: 1px solid #eee;
+            border-radius: 6px;
+        }
+        #username {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+        #message {
+            width: 100%;
+            height: 120px;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            resize: vertical;
+            box-sizing: border-box;
+        }
+        button {
+            background-color: #1a73e8;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        button:hover {
+            background-color: #0d66d0;
+        }
+        .message-list {
+            border-top: 1px solid #eee;
+            padding-top: 20px;
+        }
+        .message-item {
+            padding: 15px;
+            margin-bottom: 15px;
+            background-color: #f9f9f9;
+            border-radius: 6px;
+        }
+        .message-item .time {
+            color: #999;
+            font-size: 12px;
+            margin-left: 10px;
         }
     </style>
 </head>
@@ -81,7 +127,40 @@
     <!-- 内容区域 -->
     <div class="content">
         <h2>关于第一次制作</h2>
-        <p>这是我第一次尝试制作HTML网页，做的有点简陋吧，就只有几个超链接 以后会变好的，(应该吧)awa
+        <p>这是我第一次尝试制作HTML网页，十分简陋以后会变好的(应该吧)awa 可以在下面留言:)</p>
     </div>
-</body>
-</html>
+
+    <!-- 留言板区域 -->
+    <div class="message-board">
+        <h2>留言板</h2>
+        <!-- 留言输入区 -->
+        <div class="message-input">
+            <input type="text" id="username" placeholder="你的昵称" required>
+            <textarea id="message" placeholder="请输入留言..." required></textarea>
+            <button onclick="submitMessage()">提交留言</button>
+        </div>
+        <!-- 留言展示区 -->
+        <div class="message-list" id="messageList">
+            <!-- 留言会通过JS动态加载到这里 -->
+        </div>
+    </div>
+
+    <script>
+        // 后端接口地址（本地测试用，部署后需改为服务器地址）
+        const API_URL = 'http://localhost:3000/api';
+
+        // 提交留言
+        function submitMessage() {
+            const username = document.getElementById('username').value.trim();
+            const message = document.getElementById('message').value.trim();
+            
+            if (!username || !message) {
+                alert('请填写昵称和留言内容');
+                return;
+            }
+
+            const time = new Date().toLocaleString(); // 获取当前时间
+
+            // 发送到后端接口
+            fetch(`${API_URL}/submit-message`, {
+                method: 'PO
